@@ -1,0 +1,8 @@
+{
+  "name": "jarvis-ai-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node server.mjs" },
+  "dependencies": { "express": "^4.21.2", "openai": "^4.77.0", "helmet": "^8.0.0", "express-rate-limit": "^7.5.0" }
+}

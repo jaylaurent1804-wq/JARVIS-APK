@@ -1,0 +1,27 @@
+JARVIS — PHONE-ONLY APK BUILD GUIDE
+==================================
+
+You do NOT need a Windows PC or Android Studio. GitHub Actions builds the APK in the cloud.
+
+A. Extract this ZIP on your Android phone using Files / My Files.
+B. Open github.com in Chrome and sign in (create a free account if needed).
+C. Create a repository named JARVIS-Android. Leave README/license/gitignore unchecked.
+D. In the repository, tap Add file > Upload files. Upload the extracted contents.
+   IMPORTANT: include the hidden .github/workflows/build-apk.yml file and render.yaml.
+   If needed, use Chrome menu > Desktop site and enable hidden files in the file picker.
+E. Commit to branch main.
+F. Open Actions > Build JARVIS APK > Run workflow.
+G. When finished, open the run and download artifact JARVIS-debug-APK.
+H. Extract that artifact ZIP and install app-debug.apk.
+
+AI BACKEND (required for real AI):
+1. In Render, create a Blueprint from the same GitHub repository.
+2. Set OPENAI_API_KEY in the Render service environment. Never put the key in the app.
+3. Copy the Render HTTPS service URL.
+4. In GitHub repo Settings > Secrets and variables > Actions > Variables, add:
+   Name: JARVIS_API_BASE_URL
+   Value: https://your-render-service-url (no trailing slash)
+5. Run the GitHub Actions build again.
+
+The backend starter has no user login yet. Do not share its URL publicly until authentication is added.
+The wake phrase is a speech-recognition prototype, not a guaranteed always-on hotword engine.
